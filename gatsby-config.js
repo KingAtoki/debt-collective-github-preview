@@ -10,7 +10,6 @@ module.exports = {
         fieldName: "github",
         url: "https://api.github.com/graphql",
         headers: {
-          // Learn about environment variables: https://gatsby.dev/env-vars
           Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
         },
       },

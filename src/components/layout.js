@@ -21,7 +21,7 @@ const theme = createMuiTheme({
   },
 })
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   const data = useStaticQuery(
     graphql`
       {
@@ -29,6 +29,23 @@ export default function Layout({ children }) {
           organization(login: "debtcollective") {
             avatarUrl
             websiteUrl
+            repositories(first: 10) {
+              nodes {
+                description
+                homepageUrl
+                url
+                name
+                mentionableUsers(first: 10) {
+                  nodes {
+                    avatarUrl
+                    bio
+                    email
+                    name
+                  }
+                }
+                id
+              }
+            }
           }
         }
         site {
@@ -39,6 +56,7 @@ export default function Layout({ children }) {
       }
     `
   )
+
   return (
     <ThemeProvider theme={theme}>
       <Header
@@ -57,3 +75,5 @@ export default function Layout({ children }) {
     </ThemeProvider>
   )
 }
+
+export default Layout

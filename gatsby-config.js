@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         fieldName: "github",
         url: "https://api.github.com/graphql",
         headers: {
-          Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
       },
     },

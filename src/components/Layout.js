@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
         style={{
           background:
             "linear-gradient(125.85deg, #dbf8ff 15.46%, #f6faf8 45.89%, #fcfbf7 81.18%)",
-          height: "1000px",
+          height: "auto",
         }}
       >
         {children}

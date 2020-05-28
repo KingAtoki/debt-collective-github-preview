@@ -26,7 +26,7 @@ const Home = ({
     <Layout>
       <Grid container className={classes.root} spacing={2}>
         {repos.map(repo => (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} key={repo.url}>
             <RepoCard repo={repo} key={repo.url} />
           </Grid>
         ))}
